@@ -26,8 +26,8 @@ Some reveal.js features, like external markdown and speaker notes, require that 
 
    You can change the port by using `grunt serve --port 8001`.
 
-### Run locally with speaker notes
-_TODO_
+#### Speaker notes
+To open the speaker notes in a separate browser window press the key ```s``` on your keybard. _Note: that this only works in local mode_
 
 ### Folder Structure
 - **css/** Core styles without which the project does not function
