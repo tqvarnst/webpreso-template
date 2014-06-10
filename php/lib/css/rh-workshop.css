@@ -1,0 +1,49 @@
+.reveal section img {
+	border: none;
+ }
+ 
+ div.footer {
+	width: 100%;
+	text-align:center;
+	position:absolute;
+	bottom:3%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: "Open Sans";
+	font-size: 20px;
+	font-weight: normal;
+	letter-spacing: -0.02em;
+	color: black;
+ }
+ 
+ 
+ div.note {
+	line-height:1.2em;
+	position: relative;
+	width: 200px;
+	padding: 20px;
+	margin: 20px;
+	font-size:15px;
+}
+ 
+div.post-it {
+	
+	background:url('/lib/img/note.png');
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+}
+
+div.todo {
+	background:url('/lib/img/todo.png');
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+}
+
+div.note > h3 {
+	font-size:25px;
+	font-family: 'Permanent Marker';
+}
+
+div.note  > ul, div.note > ol {
+	line-height:1.2em
+}
