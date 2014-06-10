@@ -1,0 +1,86 @@
+/**
+ * Sky theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+
+
+@font-face {
+    font-family: 'overpassregular';
+    src: url('/lib/fonts/Overpass_Regular-webfont.eot');
+    src: url('/lib/fonts/Overpass_Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/lib/fonts/Overpass_Regular-webfont.woff') format('woff'),
+         url('/lib/fonts/Overpass_Regular-webfont.ttf') format('truetype'),
+         url('/lib/fonts/Overpass_Regular-webfont.svg#overpassregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'overpassbold';
+    src: url('/lib/fonts/Overpass_Bold-webfont.eot');
+    src: url('/lib/fonts/Overpass_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/lib/fonts/Overpass_Bold-webfont.woff') format('woff'),
+         url('/lib/fonts/Overpass_Bold-webfont.ttf') format('truetype'),
+         url('/lib/fonts/Overpass_Bold-webfont.svg#overpassbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+
+// Override theme settings (see ../template/settings.scss)
+//$mainFont: 'Open Sans';
+$mainFont: 'overpassregular';
+$mainColor: #000000;
+//$headingFont: 'Open Sans';
+$headingFont: 'overpassbold';
+$headingColor: #000000;
+$headingLetterSpacing: 0.02em;
+$headingTextShadow: none;
+$linkColor: gray;
+$linkColorHover: darken( $linkColor, 20% );
+$backgroundColor: white;
+$selectionBackgroundColor: black;
+
+// Fix links so they are not cut off
+.reveal a:not(.image) {
+	line-height: 1.3em;
+}
+
+// Background generator
+@mixin bodyBackground() {
+	background-color: white;
+ 	background-image: url('/lib/img/redhat-default-bg.png');
+    background-position: center bottom;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    
+    //lib/img/redhat-default-bg.png" data-background-size="100% auto" data-background-position="center bottom"
+}
+//$backgroundColor:: #564979;
+//$backgroundImage: 
+
+//background-position:0px 0px; 
+//border: 1px solid rgba(0, 0, 0, .3);
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
