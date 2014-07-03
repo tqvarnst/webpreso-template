@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Red Hat Presentation Title</title>
+
+		<meta name="description" content="This is a presentation template for Red Hat MW presentations">
+		<meta name="author" content="Thomas Qvarnstrom, Red HAt">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/redhat.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+		<style>
+		 .reveal section img {
+		 	border: none;
+		 }
+		 
+		 div.footer {
+		 	width: 100%;
+		 	text-align:center;
+		 	position:absolute;
+		 	bottom:3%;
+		 	margin-left: auto;
+  			margin-right: auto;
+  			font-size: 20px;
+			font-weight: normal;
+			letter-spacing: -0.02em;
+			color: black;
+		 }
+		 
+		 
+		 div.note {
+		 	line-height:1.2em;
+		 	position: relative;
+			width: 200px;
+			padding: 20px;
+			margin: 20px;
+			font-size:15px;
+		}
+		 
+		div.post-it {
+			
+			background:url('/lib/img/note.png');
+			background-size: 100% 100%;
+			background-repeat:no-repeat;
+		}
+		
+		div.todo {
+			background:url('/lib/img/todo.png');
+			background-size: 100% 100%;
+			background-repeat:no-repeat;
+		}
+	
+		div.note > h3 {
+			font-size:25px;
+			font-family: 'Permanent Marker';
+		}
+		
+		div.note  > ul, div.note > ol {
+			line-height:1.2em
+		}
+		
+		table.altrow { position:relative; }
+		table.altrow > tbody > tr > th { padding: 20px }
+		table.altrow > tbody > tr > td { padding: 20px }
+		table.altrow > tbody > 	tr:nth-child(odd) { background-color:#bfdce8; }
+		table.altrow > tbody > tr:nth-child(1) { background-color: #781f1c; color: white }
+		table.altrow >  tbody > tr > td.center { text-align:center; }
+		
+		
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides" >			
+				<section data-background="/lib/img/rh-bg-start.jpg" data-background-size="cover" data-background-position="center bottom">
+					<div style="width: 1056px; height: 500px; position: center top; color: white">
+						<h2 style="color: white">What is Docker?</h2>
+						<h4 style="color: white">A use-case perspective</h4>
+					</div>
+					<div style="width: 600px; height: 300px; position: left bottom; text-align: left; color: white">
+					
+							Thomas Qvarnstr&ouml;m<br/>
+							Twitter: <a href="https://twitter.com/tqvarnst" class="twitter-follow-button" data-show-count="false">Follow @tqvarnst</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><br/>
+							Blog: <a href="http://blog.thomasqvarnstrom.com">blog.thomasqvarnstrom.com</a>
+							Email: <a href="mailto:tqvarnst@redhat.com">tqvarnst@redhat.com</a>
+					</div>
+					<aside class="notes" data-markdown>
+						<script type="text/template">
+						Welcome to the JDG introduction workshop. 
+						</script>
+					</aside>
+				</section>
+				<section>
+					<div data-markdown>
+						<script type="text/template">
+						## Agenda
+						* Intro to Docker
+						* A real life example of using Docker
+						* What is Red Hat doing to Support Docker?
+						    * RHEL7
+						    * Atomic
+						    * GearD
+						    * Satellite 6
+						* Q&A
+						</script>
+					</div>
+					<aside class="notes" data-markdown>
+						<script type="text/template">
+						#Speaker notes
+						This is a discusion session. I'm not the most skilled Docker person here, so all please contribute but also remember that we need to involve all in the discussion.
+						</script>
+					</aside>
+				</section>
+				<section data-background="/lib/img/container-ship.jpg" data-background-size="cover" data-background-position="center bottom">
+					<h3 style="color: white; background-color: #003d6e">Docker is high density containers</h3> 
+	     		</section>
+	     		<section data-background="/lib/img/aircraft-carrier.jpg" data-background-size="cover" data-background-position="center middle">
+					<h3 style="color: white;">Virt is a launch platform...</h3> 
+	     		</section>
+				<section>
+					<h4>Containers Ship vs Aircraft carrier</h4>
+					<table class="reveal altrow">
+						<th></th>
+						<th>Container</th>
+						<th>Carrier</th>
+						<tr><td>Cost to implement</td><td class="center">Low</td><td class="center">High</td></tr>
+						<tr><td>Operations cost</td><td class="center">Low</td><td class="center">Very High</td></tr>
+						<tr><td>Efficiency/Resource</td><td class="center">High</td><td class="center">Low</td></tr>
+						<tr><td>Performance</td><td class="center">High</td><td class="center">High</td></tr>
+						<tr><td>Overcommit</td><td class="center">Yes</td><td class="center">No</td></tr>
+					</table>
+					<aside class="notes">
+					Notes!
+					</aside>
+				</section>
+				<section>
+					<h4>Docker vs Virtualization</h4>
+					<table class="reveal altrow">
+						<th></th>
+						<th>Container</th>
+						<th>Virtualization</th>
+						<tr><td>Cost to implement</td><td class="center">Low</td><td class="center">High</td></tr>
+						<tr><td>Operations cost</td><td class="center">Low</td><td class="center">High</td></tr>
+						<tr><td>Efficiency/Resource</td><td class="center">Very High</td><td class="center">Medium</td></tr>
+						<tr><td>Performance</td><td class="center">High</td><td class="center">OK</td></tr>
+						<tr><td>Overcommit</td><td class="center">Yes, heavily</td><td class="center">Somewhat</td></tr>
+					</table>
+					<aside class="notes">
+					Notes!
+					</aside>
+				</section>
+	     		<section data-background="/lib/img/virt-container.jpg" data-background-size="cover" data-background-position="center middle">
+					<h3 style="color: white;">Using Virt as container</h3> 
+	     		</section>
+				
+				
+				
+				<section data-markdown data-separator="^\n---\n$" data-vertical="^\n--\n$">
+                    <script type="text/template">
+                        #### Docker installation
+                        
+                        On Fedora or RHEL 7
+                         
+                        ```
+                        $ yum install docker
+                        ```
+                        
+                        --
+                        
+						#### Docker installation
+						
+						On RHEL 6
+						
+						```
+                        $ yum install docker-io
+                        ```
+                        
+                        --
+                        
+						#### Docker getting started
+						String with an interactive terminal on RHEL7
+                       
+						```
+						$ docker run -i -t rhel7 /bin/bash
+                       	```
+
+                        ---
+
+                        ## Docker build file
+                        ```
+
+FROM eap-base
+MAINTAINER Thomas Qvarnstrom <tqvarnst@redhat.com>
+
+USER jboss
+
+ADD support-files/host.xml $JBOSS_HOME/domain/configuration/host.xml
+
+EXPOSE 8080
+
+#RUN $JBOSS_HOME/bin/add-user.sh -g admin -u admin -p admin-123 -s
+
+CMD $JBOSS_HOME/bin/domain.sh  \
+	-Djboss.domain.master.address=${DC_MASTER_PORT_9999_TCP_ADDR} \
+	-Djboss.domain.backup.address=${DC_BACKUP_PORT_9999_TCP_ADDR}
+                        ```
+                    </script>
+                </section>
+				
+				
+				
+				<section data-background="/lib/img/rh-bg-1.jpg" data-background-size="cover" data-background-position="center bottom">
+					<h1 style="color: white">Docker in RHEL 7</h1>
+				</section>
+				
+				<section data-background="/lib/img/rh-bg-9.jpg" data-background-size="cover" data-background-position="center bottom">
+					<h1 style="color: white">Project Atomic</h1>
+				</section>
+				
+				<section>
+					<h3>GearD</h3>
+					<img src="/lib/img/demo1.png" width="850"/>
+					<div class="fragment note post-it" style="z-index: +1; position: absolute; left:-10%; top: 10%;">
+						<h3>Note!</h3>
+						Gear can explicitly depend on-each other and via environment variable pass for example connection data.
+					</div>
+				</section>
+		
+				
+				<section data-background="/lib/img/rh-bg-2.jpg" data-background-size="cover" data-background-position="center bottom">
+					<h1 style="color: white">Q&A</h1>
+				</section>
+
+			</div>
+
+		</div>
+		
+		<!-- If a footer text is needed use the uncomment the div class=footer -->
+	
+		<!--
+		<div class="footer">
+			JDG 6.x Workshop, Thomas Qvarnstr&ouml;m Red Hat
+		</div>
+		-->
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'default',
+				backgroundTransition: 'slide',
+				//parallaxBackgroundImage: '/lib/img/rh-bg-1.jpg',
+				//parallaxBackgroundSize: '1653px 1240px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
